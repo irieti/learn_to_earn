@@ -1,0 +1,41 @@
+/* Global styles for Telegram Mini App */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 12px;
+    background: #f9f9f9;
+}
+
+button {
+    background: #007aff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 8px 0;
+}
+
+/* Optimize for Telegram's dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a1a1a;
+        color: white;
+    }
+
+    .card {
+        background: #2d2d2d;
+        border-color: #444;
+    }
+}
+
+.barFill {
+    transition: width 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
