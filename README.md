@@ -26,6 +26,17 @@ Verifies task completion (e.g., checks on-chain transactions via tx_hash)
 Issues rewards like NFTs or internal tokens
 Provides feedback and motivational progress tracking
 
+⚙️ Olas Integration
+Integration to Olas network for AI-agents communication to make new quizes
+
+Pushed to IPFS, but due to docker technical issues couldnt finish this part
+\*\* Pushed component with:
+PublicId: irieti/learn_earn_web3_agent:0.1.0
+Package hash: bafybeifdrkspjqhe5zuolwwnztc7e3qo65nnzawvzgy4zksy4elnxsor6m
+Pushed component with:
+PublicId: irieti/learn_earn_web3_agent:0.1.0
+Package hash: bafybeifsz3q2a4q2mpzt4lzq3cwsutk73bdfclpijn2atghi66hs2tivma
+
 ⚙️ Rootstock Integration
 
 ✅ Deployed on Rootstock — smart contracts for task verification and reward issuance
