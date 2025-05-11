@@ -5,7 +5,10 @@ class User(models.Model):
     """User profile data"""
 
     telegram_id = models.CharField(max_length=50, unique=True)
-    wallet_address = models.CharField(max_length=42, blank=True, null=True)
+    wallet_addresses = models.JSONField(
+        default=dict
+    )  # {'gnosis': '0x...', 'rootstock': '0x...'}
+    preferred_chain = models.CharField(max_length=20, default="gnosis")
     xp_points = models.IntegerField(default=0)
     level = models.IntegerField(default=1)
     interests = models.JSONField(default=dict)
@@ -68,6 +71,9 @@ class Task(models.Model):
     verification_data = models.JSONField(default=dict)
     project = models.CharField(max_length=100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    supported_chains = models.JSONField(default=list)  # ['gnosis', 'rootstock']
+    chain_specific_data = models.JSONField(default=dict)
+    olas_service_id = models.CharField(max_length=64, null=True, blank=True)
 
     def __str__(self):
         return f"{self.title} ({self.task_type})"
@@ -85,6 +91,9 @@ class UserTask(models.Model):
     started_at = models.DateTimeField(null=True, blank=True)
     completed_at = models.DateTimeField(null=True, blank=True)
     verification_data = models.JSONField(default=dict)
+    reward_chain = models.CharField(max_length=20, null=True, blank=True)
+    reward_tx_hash = models.CharField(max_length=66, null=True, blank=True)
+    verified_by_olas = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.user} - {self.task}"
